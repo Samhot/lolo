@@ -5,16 +5,16 @@ declare module 'fullpage.js/dist/fullpage.extensions.min' {
         anchors?: string[];
         animateAnchor?: boolean;
         autoScrolling?: boolean;
-        bigSectionsDestination?: any; //top, bottom, null
+        bigSectionsDestination?: any; // top, bottom, null
         continuousHorizontal?: boolean;
         continuousVertical?: boolean;
         controlArrowColor?: string;
         controlArrows?: boolean;
         css3?: boolean;
-        dragAndMove?: any; //true, false, 'horizontal', 'fingersonly'
+        dragAndMove?: any; // true, false, 'horizontal', 'fingersonly'
         easing?: string;
         easingcss3?: string;
-        fadingEffect?: any; //true, false, 'sections', 'slides'
+        fadingEffect?: any; // true, false, 'sections', 'slides'
         fitToSection?: boolean;
         fitToSectionDelay?: number;
         fixedElements?: string; // '#header, .footer'
@@ -65,16 +65,6 @@ declare module 'fullpage.js/dist/fullpage.extensions.min' {
         v2compatible?: boolean;
         verticalCentered?: boolean;
 
-        /* callback and events */
-        afterLoad?(origin? :any, destination? :any, direction? :any): void;
-        afterRender?(): void;
-        afterResize?(width: number, height: number): void;
-        afterReBuild?(): void;
-        afterResponsive?(isResponsive?: any): void;
-        afterSlideLoad?(section? :any, origin? :any, destination? :any, direction? :any): void;
-        onLeave?(origin? :any, destination? :any, direction? :any): void;
-        onSlideLeave?(section? :any, origin? :any, destination? :any, direction? :any): void;
-        
         /* keys for extensions */
         fadingEffectKey?: string;
         responsiveSlidesKey?: string;
@@ -85,6 +75,16 @@ declare module 'fullpage.js/dist/fullpage.extensions.min' {
         offsetSectionsKey?: string;
         dragAndMoveKey?: string;
         parallaxKey?: string;
+
+        /* callback and events */
+        afterLoad?(origin?: any, destination?: any, direction?: any): void;
+        afterRender?(): void;
+        afterResize?(width: number, height: number): void;
+        afterReBuild?(): void;
+        afterResponsive?(isResponsive?: any): void;
+        afterSlideLoad?(section?: any, origin?: any, destination?: any, direction?: any): void;
+        onLeave?(origin?: any, destination?: any, direction?: any): void;
+        onSlideLeave?(section?: any, origin?: any, destination?: any, direction?: any): void;
         /* end key sections */
     }
 
@@ -100,6 +100,17 @@ declare module 'fullpage.js/dist/fullpage.extensions.min' {
         scrollHorizontally: any;
         scrollOverflowReset: any;
         version: string;
+        shared: {
+            afterRenderActions(): void;
+        };
+        test: {
+            left: number[];
+            top: string;
+            translate3d: string;
+            translate3dH: string[];
+            options: options;
+            setAutoScrolling(e?: any, t?: any): void;
+        };
         destroy(n?: any): void;
         fitToSection(): void;
         getActiveSection(): any;
@@ -122,16 +133,5 @@ declare module 'fullpage.js/dist/fullpage.extensions.min' {
         setResponsive(e?: any): void;
         setScrollingSpeed(e?: any, t?: any): void;
         silentMoveTo(e?: any, t?: any): void;
-        shared: {
-            afterRenderActions(): void;
-        }
-        test: {
-            left: number[];
-            top: string;
-            translate3d: string;
-            translate3dH: string[];
-            setAutoScrolling(e?: any, t?: any): void;
-            options: options;
-        }
     }
 }

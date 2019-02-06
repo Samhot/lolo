@@ -7,13 +7,41 @@
   background-size: cover;
 }
 
-.font {
+.section-icon {
   font-family: 'Dancing Script', cursive;
-  font-weight: 100;
+  color: aliceblue;
+  width: 375px;
+}
+
+.section-font {
+  font-family: 'Dancing Script', cursive;
   color: aliceblue;
   position: absolute;
-  left: 0;
-  right: 0;
+  width: 375px;
+}
+
+.big-font {
+  font-family: 'Sigmar One', cursive;
+  color: aliceblue;
+  font-size: 1.4em;
+  position: absolute;
+  width: 375px;
+}
+
+.third-font {
+  font-family: 'Carter One', cursive;
+  color: aliceblue;
+  font-size: 1.4em;
+  position: absolute;
+  width: 375px;
+}
+
+.light {
+  font-weight: 100;
+}
+
+.top {
+  top: 0;
 }
 
 .high {
@@ -22,10 +50,6 @@
 
 .low {
   bottom: 16%;
-}
-
-.top {
-  top: 0;
 }
 
 .bottom {
